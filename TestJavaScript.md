@@ -127,11 +127,11 @@ function saludo(name, lastname, nickname) {
 
 - *¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?*
 		Las condicionales pueden ser: if (evalúa si una condición se cumple... si es "true"), elseif (evalúa dos o más condiciones), else (evalúa si la condición es "false"). 
-
+		
 		También puedo usar "switch" que evalúa mediante casos. 
 		
-
 		En el caso de los "IF/ELSEIF/ELSE", estos nos permiten hacer validacioes distintas en cada validación o condicional si así se quiere. En el switch por su parte, todos los casos (o validaciones) se compraran con la misma variable o condición definida dentro del mismo. 
+
 <br>
 
 - *¿Puedo combinar funciones y condicionales?*
