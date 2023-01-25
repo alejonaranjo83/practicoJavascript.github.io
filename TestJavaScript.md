@@ -10,22 +10,19 @@ Recuerda que el éxito no se mide por cuánto tiempo te toma aprender, esa métr
 
 *1. Responde las siguientes preguntas en la sección de comentarios:*
 
-- **¿Qué es una variable y para qué sirve?**
+- *¿Qué es una variable y para qué sirve?*
 		Una variable es un contenedor que me permite almacenar datos en la memoria del computador 
 <br>
+
+- *¿Cuál es la diferencia entre declarar e inicializar una variable?*
+		Cuando declaro una variable estoy reservando su nombre en la memoria (let nombreVariable); cuando la inicializo le estoy asignando el valor que le corresponde a la variable que se declaró (nombreVariable = "xyz"). Si le cambio el valor a la variable se llama "reinicializar".
 <br>
 
-- **¿Cuál es la diferencia entre declarar e inicializar una variable?**
-		Cuando declaro una variable estoy reservando su nombre en la memoria; cuando la inicializo le estoy asignando el valor que le corresponde a la variable que se declaró
-<br>
-<br>
-
-- **¿Cuál es la diferencia entre sumar números y concatenar strings?**
+- *¿Cuál es la diferencia entre sumar números y concatenar strings?*
 		Al ser elementos de tipo diferente (typeOf), JS interpreta diferente el operador "+". Si son elementos de tipo "Number" se suma; si son "String" (textos) concatena ambos elementos
 <br>
-<br>
 
-- **¿Cuál operador me permite sumar o concatenar?**
+- *¿Cuál operador me permite sumar o concatenar?*
 		El operador "+"
 
 
@@ -45,16 +42,15 @@ Recuerda que el éxito no se mide por cuánto tiempo te toma aprender, esa métr
 
 *3. Traduce a código JavaScript las variables del ejemplo anterior y deja tu código en los comentarios:*
  ```javascript
-	var nombre = "Alejandro"
-	var apellido = "Naranjo"
-	var nombreUsuarioPlatzi = "alejonaranjo83"
-	var edad = 39
-	var correo = "alejonaranjo83@gmail.com"
-	var mayorDeEdad = true
-	var dineroAhorado = 1
-	var deudas = 0.5
+let nombre = "Alejandro"
+let apellido = "Naranjo"
+let nombreUsuarioPlatzi = "alejonaranjo83"
+let edad = 39
+let correo = "alejonaranjo83@gmail.com"
+let esMayorDeEdad = true
+let dineroAhorado = 1
+let deudas = 0.5
  ```
-    
 
 <br>
 
@@ -63,13 +59,13 @@ Recuerda que el éxito no se mide por cuánto tiempo te toma aprender, esa métr
 - Nombre completo (nombre y apellido)
 - Dinero real (dinero ahorrado menos deudas)
 ```javascript
-var nombre = "Alejandro"
-var apellido = "Naranjo"
-var nombreCompleto = console.log(nombre + " " + apellido)
+let nombre = "Alejandro"
+let apellido = "Naranjo"
+let nombreCompleto = console.log(nombre + " " + apellido)
 
-var dineroAhorrado = 1
-var deudas = 0.5
-var dineroReal = console.log(dineroAhorrado - deudas)
+let dineroAhorrado = 1
+let deudas = 0.5
+let dineroReal = console.log(dineroAhorrado - deudas)
 ```
 
 <br>
@@ -81,19 +77,16 @@ var dineroReal = console.log(dineroAhorrado - deudas)
 *1. Responde las siguientes preguntas en la sección de comentarios:*
 
 - *¿Qué es una función?*
-		Es una parte del código que me permite ejecutar acciones con valores almacenados en variables.
-<br>
+		Algo que me permite ejecutar acciones con partes del código que están en su interior. Encapsula bloques de código para que sean reutilizables y ejecutables en el futuro.
 <br>
 
 - *¿Cuándo me sirve usar una función en mi código?*
-		Cuando voy a repetir varias veces el mismo procedimiento, puedo usar una función para ahorrar espacio.
-<br>
+		Cuando voy a repetir varias veces el mismo procedimiento. También puedo usarla para ahorrar espacio y darle orden al código, lo cual facilita su lectura.
 <br>
 
 - *¿Cuál es la diferencia entre parámetros y argumentos de una función?*
-		Los parámetros están desde la línea en que se define la función (dentro del paréntesis), pueden ser modificados cada vez q se invoque la fxn y ser usados como argumentos de la misma. Los argumentos están dentro de la definición de la fxn y no son visibles al momento de ejecutarse.
-
-
+		Los parámetros son las variables que la fxn espera y se definen al crearla (no se ven al ejecutarse). Los argumentos son los datos que se invocan en la fxn al momento de ejecutarla (dentro del paréntesis) y pueden ser modificados cada vez q se invoque.
+		Cuando ejecuto la fxn envío argumentos, pero cuando la creo necesito definir los parámetros.
 <br>
 
 *2. Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:*
@@ -107,15 +100,16 @@ const nickname = "juandc";
 console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
 ```
 <br>
-Respuesta:
+
+**Respuesta:**
 
 ```javascript
-const name = "Juan David";
-const lastname = "Castro Gallego";
-const nickname = "juandc";
+function nombreCompleto(name, lastname) {
+	return name + " " + lastname
+}
 
-function mensaje(name, lastname, nickname) {
-	const completeName = name + " " + lastname;
+function saludo(name, lastname, nickname) {
+	const completeName = nombreCompleto(name, lastname);
 	console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
 }
 ```
@@ -127,18 +121,23 @@ function mensaje(name, lastname, nickname) {
 
 *1. Responde las siguientes preguntas en la sección de comentarios:*
 
-- ¿Qué es un condicional?
-		Es una parte del código que me permite evaluar diferentes condiciones y en fxn de eso hacer o no alguna cosa.
-<br>
-<br>
-
-- ¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
-		Las condicionales pueden ser: if (evalúa si una condición se cumple... si es "true"), elseif (evalúa dos o más condiciones), else (evalúa si la condición es "false").
-		También puedo usar "switch" que evalúa mediante casos, o "while" que evalúa mientras la condición se mantenga "true". 
-<br>
+- *¿Qué es un condicional?*
+		Es la forma en que ejecuto un bloque de código u otro, dependiendo de alguna condición.
 <br>
 
-- ¿Puedo combinar funciones y condicionales?
+- *¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?*
+		Las condicionales pueden ser: if (evalúa si una condición se cumple... si es "true"), elseif (evalúa dos o más condiciones), else (evalúa si la condición es "false"). 
+		
+		<br>
+
+		También puedo usar "switch" que evalúa mediante casos. 
+		
+		<br>
+
+		En el caso de los "IF/ELSEIF/ELSE", estos nos permiten hacer validacioes distintas en cada validación o condicional si así se quiere. En el switch por su parte, todos los casos (o validaciones) se compraran con la misma variable o condición definida dentro del mismo. 
+<br>
+
+- *¿Puedo combinar funciones y condicionales?*
 		Si puedo mezclar funciones y condicionales
 
 <br>
@@ -164,7 +163,8 @@ switch (tipoDeSuscripcion) {
 }
 ```
 <br>
-Respuesta
+
+**Respuesta:**
 
 ```javascript
 const tipoDeSuscripcion = "Basic"
@@ -184,13 +184,57 @@ if(tipoDeSuscripcion === "Basic") {
 <br>
 
 *3. Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).*
-Respuesta
+
+**Respuesta:**
 
 ```javascript
-En caso de q se pueda, no sé cómo hacerlo :(
+
+function conseguirTipoSuscripcion(suscripcion) {
+	if(suscripcion === "Basic") {
+		console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+		return;
+	} if(suscripcion === "Expert") {
+		console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+		return;
+	} if(suscripcion === "ExpertPlus") {
+		console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+		return;
+	} if(suscripcion === "Free") {
+		console.log("Solo puedes tomar los cursos gratis");
+		return;
+	}
+}
+
+conseguirTipoSuscripcion("Free")
 ```
+<br>
+<br>
 
 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
+
+```js
+
+function conseguirTipoSuscripcion(suscripcion) {
+	if(tiposDeSuscripciones[suscripcion]) {
+		console.log(tiposDeSuscripciones[suscripcion]);
+		return;
+	}
+
+	console.warn("Ese tipo de suscripción no existe")
+}
+
+const tiposDeSuscripciones = {
+	free: "Solo puedes tomar los cursos gratis",
+	basic: "Puedes tomar casi todos los cursos de Platzi durante un mes",
+	expert: "Puedes tomar casi todos los cursos de Platzi durante un año",
+	expertplus: "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"
+}
+
+conseguirTipoSuscripcion("free")
+
+conseguirTipoSuscripcion("cualquier nombre")
+
+```
 
 <br>
 <br>
@@ -200,23 +244,27 @@ En caso de q se pueda, no sé cómo hacerlo :(
 
 *1. Responde las siguientes preguntas en la sección de comentarios:*
 
-- ¿Qué es un ciclo?
-		Es una parte del código que se repite mientras se mantengan las condiciones fijadas 
-<br>
+- *¿Qué es un ciclo?*
+		Es una parte del código que se repite mientras se mantengan las condiciones fijadas.
+
+		<br>
+
+		La forma de ejecutar un bloque de código hasta que se cumpla una condición.
 <br>
 
-- ¿Qué tipos de ciclos existen en JavaScript?
-		Existen ciclos de tipo "for", "while" o "of"
-<br>
+- *¿Qué tipos de ciclos existen en JavaScript?*
+		Existen ciclos de tipo "for", "while" y "of". También está el "do while" (que no conozco), el cual en la primer validación no hace la validación (ejecuta primera vez el código pero sin validar).
 <br>
 
-- ¿Qué es un ciclo infinito y por qué es un problema?
+- *¿Qué es un ciclo infinito y por qué es un problema?*
 		Es un ciclo que nunca se detendrá, por lo cual consumirá capacidad de cálculo del computador y eventualmente lo podrá bloquear o recalentar.
 <br>
-<br>
 
-- ¿Puedo mezclar ciclos y condicionales?
+- *¿Puedo mezclar ciclos y condicionales?*
 		Si puedo mezclar ciclos y condicionales
+
+<br>
+<br>
 
 *2. Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:*
 ```javascript
@@ -229,17 +277,18 @@ for (let i = 10; i >= 2; i--) {
 }
 ```
 <br>
-Respuesta:
+
+**Respuesta:**
 
 ```javascript
-var i=0
-while(i<5) {
+let i=0
+while(i < 5) {
 	console.log("El valor de i es: " + i);
 	i++
 }
 
-var i=10
-while(i>=2) {
+let i=10
+while(i >= 2) {
 	console.log("El valor de i es: " + i);
 	i--
 }
@@ -248,24 +297,19 @@ while(i>=2) {
 
 *3. Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.*
 💡 Pista: puedes usar la función prompt de JavaScript.
+
+**Mi solución inicial**
+
 ```javascript
+let resultado = prompt("¿Cuanto es 2 + 2?")
 
-function preguntar (){
-	var pregunta = prompt("Cuánto es 2 + 2?")
-	return pregunta
+while(resultado != 4){
+    resultado = prompt("¿Cuanto es 2 + 2?")
 }
 
-while (respuesta != 0) {
-	var respuesta = Number(preguntar())
-
-	if (respuesta !=4){
-		console.log("revisa tus cálculos")
-	} else if (respuesta === 4) {
-		console.log("Felicitaciones, efectivamente es 4")
-		break;
-	}
-}
+alert("Felicitaciones!!");
 ```
+
 <br>
 <br>
 <br>
@@ -274,21 +318,27 @@ while (respuesta != 0) {
 
 *1. Responde las siguientes preguntas en la sección de comentarios:*
 
-- ¿Qué es un array?
-		Un valor tipo objeto que almacena datos de diferentes tipos en su interior. Datos deben estar separados por comas.
-<br>
+- *¿Qué es un array?*
+		Es una lista de elementos. Almacena datos de diferentes tipos en su interior y c/u debe estar separados por comas.
+
 <br>
 
-- ¿Qué es un objeto?
-		Es una colección de propiedades y una propiedad está compuesta de una "key" y un "value" {key: value}
+```js
+	const array = [1, "Alejo", true, 345]
+```
+
+<br>
+
+- *¿Qué es un objeto?*
+		Es una lista de elementos pero cada elemento tiene un nombre. Es una colección de propiedades y una propiedad está compuesta de una "key" y un "value" {key: value}
 <br>
 
 ```javascript
 
 objeto = {
-key: value,
-nombre: "Alejandro",
-edad: 39
+	key: value,
+	nombre: "Alejandro",
+	edad: 39
 }
 
 ```
@@ -296,24 +346,22 @@ edad: 39
 
 <br>
 
-- ¿Cuándo es mejor usar objetos o arrays?
-		asdasd
-<br>
+- *¿Cuándo es mejor usar objetos o arrays?*
+		Si voy a hacer lo mismo con todos los elementos, basta con un array. Pero cuando necesito almacenar los elementos en fxn de sus claves para hacer diferentes cosas.
 <br>
 
-- ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+- *¿Puedo mezclar arrays con objetos o incluso objetos con arrays?*
 		Sí
 <br>
 
 *2. Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.*
 
 ```javascript
-// "spread operator": ...
-function ejercicio(...areglo) {
+function ejercicio(arreglo) {
 	console.log(arreglo[0])
 }
 
-var arreglo = ["a", "b", "c" , "d", "e"]
+let arreglo = ["a", "b", "c" , "d", "e"]
 
 ejercicio(arreglo)
 ```
@@ -322,13 +370,12 @@ ejercicio(arreglo)
 *3. Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).*
 
 ```javascript
-// "spread operator": ...
-function ejercicio(...areglo) {
+function ejercicio(arreglo) {
 	for(let i=0; i<arreglo.length; i++)
 		console.log(arreglo[i])
 }
 
-var arreglo = ["a", "b", "c" , "d", "e"]
+let arreglo = ["a", "b", "c" , "d", "e"]
 
 ejercicio(arreglo)
 ```
@@ -337,8 +384,7 @@ ejercicio(arreglo)
 *4. Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).*
 
 ```javascript
-// "spread operator": ...
-var objeto = {
+let objeto = {
 	nombre: "Alejandro", 
 	apellido: "Naranjo", 
 	edad: 39, 
@@ -353,4 +399,27 @@ var objeto = {
 }
 
 objeto.impreValores()
+```
+
+<br>
+
+**Otra manera** propuesta por profe del curso y que me parece mejor que la mía (es más versatil pq no tengo q ir a la definición de la fxn): convertir en array los valores de las propiedades del objeto usando propiedad "Object.values" (también existe "Object.keys")
+
+```js
+let objeto = {
+	nombre: "Alejandro", 
+	apellido: "Naranjo", 
+	edad: 39, 
+	aprendiz: true
+}
+
+function imprimirValoresObjeto(objeto) {
+	const arr = Object.values(objeto)
+	for (let i = 0; i < arr.length; i++) {
+		console.log(arr[i])
+	}
+}
+
+imprimirValoresObjeto(objeto)
+
 ```
