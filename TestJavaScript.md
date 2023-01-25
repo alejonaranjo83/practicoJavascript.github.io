@@ -185,9 +185,9 @@ if(tipoDeSuscripcion === "Basic") {
 
 *3. Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).*
 Respuesta
-En caso de q se pueda, no sé cómo hacerlo :(
-```javascript
 
+```javascript
+En caso de q se pueda, no sé cómo hacerlo :(
 ```
 
 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
@@ -250,43 +250,21 @@ while(i>=2) {
 💡 Pista: puedes usar la función prompt de JavaScript.
 ```javascript
 
-
-
-// Intento 2: 
 function preguntar (){
 	var pregunta = prompt("Cuánto es 2 + 2?")
 	return pregunta
 }
-var pregunta = preguntar()
-var respuesta = Number(pregunta)
 
-if(respuesta===4) {
-	console.log("Felicitaciones, efectivamente es 4")
-} else {
-	while(respuesta != 4){
+while (respuesta != 0) {
+	var respuesta = Number(preguntar())
+
+	if (respuesta !=4){
 		console.log("revisa tus cálculos")
-		preguntar()
-		break
+	} else if (respuesta === 4) {
+		console.log("Felicitaciones, efectivamente es 4")
+		break;
 	}
 }
-
-
-
-// Intento 1:
-var pregunta = prompt("Cuánto es 2 + 2?")
-var respuesta = Number(pregunta)
-
-if(respuesta===4) {
-	console.log("Felicitaciones, efectivamente es 4")
-} else {
-	while(respuesta != 4){
-	console.log("revisa tus cálculos")
-	pregunta
-	break
-	}
-}
-
-
 ```
 <br>
 <br>
@@ -305,13 +283,16 @@ if(respuesta===4) {
 		Es una colección de propiedades y una propiedad está compuesta de una "key" y un "value" {key: value}
 <br>
 
-		```javascript
-		objeto = {
-			key: value,
-			nombre: "Alejandro",
-			edad: 39
-		}
-		```
+```javascript
+
+objeto = {
+key: value,
+nombre: "Alejandro",
+edad: 39
+}
+
+```
+
 
 <br>
 
@@ -327,19 +308,49 @@ if(respuesta===4) {
 *2. Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.*
 
 ```javascript
+// "spread operator": ...
+function ejercicio(...areglo) {
+	console.log(arreglo[0])
+}
 
+var arreglo = ["a", "b", "c" , "d", "e"]
+
+ejercicio(arreglo)
 ```
 <br>
 
 *3. Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).*
 
 ```javascript
+// "spread operator": ...
+function ejercicio(...areglo) {
+	for(let i=0; i<arreglo.length; i++)
+		console.log(arreglo[i])
+}
 
+var arreglo = ["a", "b", "c" , "d", "e"]
+
+ejercicio(arreglo)
 ```
 <br>
 
 *4. Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).*
 
 ```javascript
+// "spread operator": ...
+var objeto = {
+	nombre: "Alejandro", 
+	apellido: "Naranjo", 
+	edad: 39, 
+	aprendiz: true,
 
+	impreValores: function(){
+		console.log(this.nombre)
+		console.log(this.apellido)
+		console.log(this.edad)
+		console.log(this.aprendiz)
+	}
+}
+
+objeto.impreValores()
 ```
