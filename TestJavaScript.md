@@ -212,6 +212,7 @@ conseguirTipoSuscripcion("Free")
 ```js
 
 function conseguirTipoSuscripcion(suscripcion) {
+	// Utilizo el argumento de la fxn (el tipo de suscripción) para q me devuelva el "value" asociado a esa "key"
 	if(tiposDeSuscripciones[suscripcion]) {
 		console.log(tiposDeSuscripciones[suscripcion]);
 		return;
@@ -220,6 +221,7 @@ function conseguirTipoSuscripcion(suscripcion) {
 	console.warn("Ese tipo de suscripción no existe")
 }
 
+// Un objeto cuyos "keys" son el nombre de las suscripciones y los "values", el mensaje q verá el usuario asociado a c/u
 const tiposDeSuscripciones = {
 	free: "Solo puedes tomar los cursos gratis",
 	basic: "Puedes tomar casi todos los cursos de Platzi durante un mes",
