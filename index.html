@@ -9,10 +9,12 @@
 <body>
     <h1>Manipulación del DOM básica</h1>
 
-    <input id="calculo1" placeholder="Escribe algo aquí" value="12345">
+    <input id="calculo1" placeholder="Escribe algo aquí">
+    <!-- <input onchange="contentChange()" id="calculo2" placeholder="Escribe algo aquí"> -->
     <input id="calculo2" placeholder="Escribe algo aquí">
-    <button id="btnCalcular">Calcular</button>
+    <button onclick="btnOnClick()" id="btnCalcular">Calcular</button>
 
+    <p id="result"></p>
 
     <script src="./script.js"></script>
 </body>
