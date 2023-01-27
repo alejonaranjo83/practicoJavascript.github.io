@@ -59,14 +59,14 @@ input.value = "5678"
 
 
 // Si quiero crear un elemento desde 0 en JS:
-
+//      a. Creo elemento
 const img = document.createElement("img")
-
+//      b. Especifico de dónde lee imagen
 img.setAttribute("src", "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-
-console.log(img)
-
-parrafoId.append(img)
 
 // Puedo eliminar contenido previo del HTML para q se quede solo lo q inserté desde JS
 parrafoId.innerText = " "
+
+// console.log(img)
+//      c. Añado ese elemento a una etiqueta de HTML
+parrafoId.append(img)
