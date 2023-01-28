@@ -63,4 +63,4 @@ function sumarInputValues(event) {
 
 
 // Aquí puedo ver qué otros eventos puedo escuchar:
-https://developer.mozilla.org/en-US/docs/Web/Events
+// https://developer.mozilla.org/en-US/docs/Web/Events
