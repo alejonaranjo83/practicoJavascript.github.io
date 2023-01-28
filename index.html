@@ -9,12 +9,19 @@
 <body>
     <h1>Manipulación del DOM básica</h1>
 
-    <input id="calculo1" placeholder="Escribe algo aquí">
-    <!-- <input onchange="contentChange()" id="calculo2" placeholder="Escribe algo aquí"> -->
-    <input id="calculo2" placeholder="Escribe algo aquí">
-    <button onclick="btnOnClick()" id="btnCalcular">Calcular</button>
+    <form action="" id="form">
+        <!-- La etiqueta "form" por defecto interpretan el último botón del mismo, como si fuera "submit" (enviar). Por defecto cambian la URL poniendo qué dato se ingresó-->
+        <input id="calculo1" placeholder="Escribe algo aquí">
+        <input id="calculo2" placeholder="Escribe algo aquí">
 
-    <p id="result"></p>
+        <!-- Si quisiera combinar HTML y JS, uso esta opción: -->
+        <!-- <button onclick="btnOnClick()" id="btnCalcular">Calcular</button> -->
+
+        <!-- Pero con esta opción, puedo hacer algo más limpio en HTML -->
+        <button id="btnCalcular">Calcular</button>
+
+        <p id="result"></p>
+    </form>
 
     <script src="./script.js"></script>
 </body>
