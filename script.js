@@ -49,6 +49,8 @@ const pResult = document.querySelector("#result")
 // Así sería sin estar dentro de un formulario:
 // btn.addEventListener("click", btnOnClick)
 
+
+
 // Así sería dentro de un formulario:
 form.addEventListener("submit", sumarInputValues)
 
